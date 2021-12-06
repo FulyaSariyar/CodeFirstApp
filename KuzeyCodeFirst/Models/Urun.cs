@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using KuzeyCodeFirst.Models.Abstracts;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KuzeyCodeFirst.Models
 {
     [Table (name: "Urunler")]
-    public class Urun
+    public class Urun : BaseEntity,IKey<int>
     {
         [Key]
         public int Id { get; set; }
@@ -18,7 +19,6 @@ namespace KuzeyCodeFirst.Models
         [Range(0,10000)]
         public int StokMiktari { get; set; }
         public ICollection<SiparisDetay> siparisDetaylari { get; set; } = new HashSet<SiparisDetay>();
-
-
+        //public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

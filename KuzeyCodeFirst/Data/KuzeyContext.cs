@@ -1,4 +1,5 @@
 ﻿using KuzeyCodeFirst.Models;
+using KuzeyCodeFirst.Models.Abstracts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -63,5 +64,33 @@ namespace KuzeyCodeFirst.Data
             //    .HasPrecision(10, 2);
 
         }
+        public override int SaveChanges()
+        {
+            var entiries = ChangeTracker.Entries()
+                 .Where(x => x.Entity is BaseEntity && x.State == EntityState.Added);
+            foreach (var item in entiries)
+            {
+                ((BaseEntity)item.Entity).CreatedDate = DateTime.Now;
+
+            }
+
+            entiries = ChangeTracker.Entries()
+                 .Where(x => x.Entity is BaseEntity && x.State == EntityState.Modified);
+            foreach (var item in entiries)
+            {
+                ((BaseEntity)item.Entity).UpdatedDate = DateTime.Now;
+            }
+            entiries = ChangeTracker.Entries()
+                 .Where(x => x.Entity is BaseEntity && x.State == EntityState.Deleted);
+            foreach (var item in entiries)
+            {
+                ((BaseEntity)item.Entity).DeletedDate = DateTime.Now;
+                ((BaseEntity)item.Entity).IsDeleted =true;
+                item.State = EntityState.Modified;
+            }
+
+            return base.SaveChanges();
+        }
+       
     }
 }

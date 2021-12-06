@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KuzeyCodeFirst.Models.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace KuzeyCodeFirst.Models
 {
     [Table(name: "Kategoriler")]
-    public class Kategori
+    public class Kategori : BaseEntity,IKey<int>
     {
         [Key]
         public int Id { get; set; }
@@ -21,5 +22,6 @@ namespace KuzeyCodeFirst.Models
 
 
         public ICollection<Urun> Urunler { get; set; } = new HashSet<Urun>(); //ilişkiyi gösterdik.
+        //public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

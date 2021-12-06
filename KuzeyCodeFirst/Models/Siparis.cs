@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KuzeyCodeFirst.Models.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace KuzeyCodeFirst.Models
 {
 
     [Table(name:"Siparisler")]
-    public class Siparis
+    public class Siparis : BaseEntity,IKey<int>
     {
         [Key]
         public int Id { get; set; }
