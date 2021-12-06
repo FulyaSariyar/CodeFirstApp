@@ -13,8 +13,10 @@ namespace KuzeyCodeFirst.Models
         public decimal Fiyat { get; set; } = 0;
         public int KategorId { get; set; } 
 
-        [ForeignKey (nameof(KategorId))] // nameof en garanti yöntem yanliş yazimi önler.
+        [ForeignKey (nameof(KategorId))] // nameof en garanti yöntem yanlis yazimi önler.
         public Kategori Kategori { get; set; }  
+        [Range(0,10000)]
+        public int StokMiktari { get; set; }
 
 
     }
