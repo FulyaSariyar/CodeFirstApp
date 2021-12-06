@@ -17,6 +17,7 @@ namespace KuzeyCodeFirst.Models
         public Kategori Kategori { get; set; }  
         [Range(0,10000)]
         public int StokMiktari { get; set; }
+        public ICollection<SiparisDetay> siparisDetaylari { get; set; } = new HashSet<SiparisDetay>();
 
 
     }
