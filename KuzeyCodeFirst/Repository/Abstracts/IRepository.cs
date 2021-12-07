@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KuzeyCodeFirst.Repository
+namespace KuzeyCodeFirst.Repository.Abstracts
 {
     internal interface IRepository<T,in TId> where T :BaseEntity // in TId,in sayesinde degistiremezsin ama kullanabilirsin.
     {

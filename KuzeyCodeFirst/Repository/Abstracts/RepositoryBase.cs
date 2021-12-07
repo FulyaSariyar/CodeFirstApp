@@ -1,5 +1,6 @@
 ﻿using KuzeyCodeFirst.Data;
 using KuzeyCodeFirst.Models.Abstracts;
+using KuzeyCodeFirst.Repository.Abstracts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
