@@ -94,6 +94,7 @@ namespace KuzeyCodeFirst.Data
 
             return base.SaveChanges();
         }
-       
+
+        
     }
 }
