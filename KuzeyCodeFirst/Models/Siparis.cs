@@ -19,8 +19,13 @@ namespace KuzeyCodeFirst.Models
         [Column(TypeName ="smalldatetime")]
 
         public DateTime? UlasmaTarhi { get; set; }
+        public int CalisanId{get;set;}
+        
+        [ForeignKey(nameof(CalisanId))]
+       
 
-        public ICollection<SiparisDetay> siparisDetaylari { get; set; }= new HashSet<SiparisDetay>();
+        public ICollection<SiparisDetay> siparisDetaylari { get; set; }= new 
+        HashSet<SiparisDetay>();
 
     }
 }
