@@ -16,9 +16,9 @@ namespace KuzeyCodeFirst.Models
         public int KategorId { get; set; } 
         [ForeignKey (nameof(KategorId))] // nameof en garanti yöntem yanlis yazimi önler.
         public Kategori Kategori { get; set; }  
+
         [Range(0,10000)]
         public int StokMiktari { get; set; }
-        //public int StokMiktari { get; set; }
         public bool DevamEtmiyorMu { get; set; } = true;
         public ICollection<SiparisDetay> siparisDetaylari { get; set; } = new HashSet<SiparisDetay>();
         //public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

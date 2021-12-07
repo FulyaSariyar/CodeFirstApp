@@ -31,6 +31,7 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnTedarikciEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEkle
@@ -66,12 +67,23 @@
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // btnTedarikciEkle
+            // 
+            this.btnTedarikciEkle.BackColor = System.Drawing.Color.Gray;
+            this.btnTedarikciEkle.Location = new System.Drawing.Point(376, 212);
+            this.btnTedarikciEkle.Name = "btnTedarikciEkle";
+            this.btnTedarikciEkle.Size = new System.Drawing.Size(147, 23);
+            this.btnTedarikciEkle.TabIndex = 3;
+            this.btnTedarikciEkle.Text = "Tedarikçi Ekle";
+            this.btnTedarikciEkle.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(587, 358);
+            this.Controls.Add(this.btnTedarikciEkle);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnEkle);
@@ -86,5 +98,6 @@
         private Button btnEkle;
         private Button btnGuncelle;
         private Button btnSil;
+        private Button btnTedarikciEkle;
     }
 }
