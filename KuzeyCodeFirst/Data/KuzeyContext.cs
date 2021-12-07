@@ -1,11 +1,6 @@
 ﻿using KuzeyCodeFirst.Models;
 using KuzeyCodeFirst.Models.Abstracts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KuzeyCodeFirst.Data
 {
@@ -31,6 +26,8 @@ namespace KuzeyCodeFirst.Data
         public DbSet<Siparis> Siparisler { get; set; }
         public DbSet<SiparisDetay> SiparisDetaylar { get; set; }
         public DbSet<Tedarikci> Tedarikciler { get; set; }
+        public DbSet<Calisan> Calisanlar { get; set; }
+
         protected  override void OnModelCreating(ModelBuilder modelBuilder) //fluent apı.
         {
             modelBuilder.Entity<Urun>()
